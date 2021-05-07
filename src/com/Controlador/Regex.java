@@ -1,3 +1,32 @@
+/**
+ * Proyecto Final de Programacion Orientada a Objetos
+ * Pfizer Vaccine Tweets
+ *
+ * @author: Giovanni Josue Venegas Ramirez (Data Science Specialization and Backend Developer)
+ * Package: Controlador
+ * File: Regex
+ * Date: 11/Mayo/2020
+ *
+ * Equipo 2:
+ * @ Giovanna Ruiz Fermoso  ------> Proyecto Escrito
+ * @ Abigail Uribe Gonzales ------> Proyecto Escrito
+ * @ Giovanni Josue Venegas Ramirez -----> Developer Principal
+ *
+ * IDE en uso: Intellij Idea
+ *
+ * Licencia Oracle: Java SE Runtime Environment 8u291
+ *
+ * Licencias de codigo abierto:
+ *  jFreechart-1.0.19
+ *  jCommon-1.0.23
+ *
+ *  S.O en donde se desarrollo: Windows 10 Version 20H2 2020
+ *
+ */
+
+
+
+
 package com.Controlador;
 
 //  Imports
@@ -15,7 +44,7 @@ public class Regex {
     public Regex() {
     }
 
-    /*
+    /**
      * This Method reads a plain text file/csv from a given path and saves the
      * content of it inside a string
      *
@@ -53,7 +82,7 @@ public class Regex {
         return arregloTemporal;
     }
 
-    /*
+    /**
      * This Method reads a plain text file/csv from a given path and saves the
      * content of it inside a double dimensioned string
      *
@@ -94,7 +123,7 @@ public class Regex {
         return keywords;
     }
 
-    /*
+    /**
      * This Method counts how many times a word from a word dictionary of
      * [keyword][count] appears inside a text given, then it saves it on the count
      * from the same dictionary
@@ -132,7 +161,7 @@ public class Regex {
         return keywords;
     }
 
-    /*
+    /**
      * This Method erases numbers from text
      *
      * @param (String) texto: Text to modify
@@ -148,7 +177,7 @@ public class Regex {
         return nuevoTexto;
     }
 
-    /*
+    /**
      * This Method erases every character except letters
      *
      * @param (String) texto: Text to modify
@@ -164,7 +193,7 @@ public class Regex {
         return nuevoTexto;
     }
 
-    /*
+    /**
      * This Method changes all letters to lowercase
      *
      * @param (String) texto: Text to modify
@@ -179,7 +208,7 @@ public class Regex {
         return nuevoTexto;
     }
 
-    /*
+    /**
      * This Method takes out accents from vocals
      *
      * @param (String) texto: Text to modify
@@ -198,7 +227,7 @@ public class Regex {
         return nuevoTexto;
     }
 
-    /*
+    /**
      * This Method erases tabs from the text given
      *
      * @param (String) texto: Text to modify
@@ -214,7 +243,7 @@ public class Regex {
         return nuevoTexto;
     }
 
-    /*
+    /**
      * This Method uses all the text modifying methods from the class, and also gets
      * rid of duplicated spaces
      *

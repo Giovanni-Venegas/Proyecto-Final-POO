@@ -1,3 +1,29 @@
+/**
+ * Proyecto Final de Programacion Orientada a Objetos
+ * Pfizer Vaccine Tweets
+ *
+ * @author: Giovanni Josue Venegas Ramirez (Data Science Specialization and Backend Developer)
+ * Package: Vista
+ * File: Panel_Uno
+ * Date: 11/Mayo/2020
+ *
+ * Equipo 2:
+ * @ Giovanna Ruiz Fermoso  ------> Proyecto Escrito
+ * @ Abigail Uribe Gonzales ------> Proyecto Escrito
+ * @ Giovanni Josue Venegas Ramirez -----> Developer Principal
+ *
+ * IDE en uso: Intellij Idea
+ *
+ * Licencia Oracle: Java SE Runtime Environment 8u291
+ *
+ * Licencias de codigo abierto:
+ *  jFreechart-1.0.19
+ *  jCommon-1.0.23
+ *
+ *  S.O en donde se desarrollo: Windows 10 Version 20H2 2020
+ *
+ */
+
 package com.Vista;
 
 import javax.swing.*;
@@ -11,12 +37,11 @@ public class Panel_Uno extends JPanel {
      static public JButton button1;
      static public JButton button2;
      static public JButton button3;
-
+    static public JButton button4;
     static public JLabel etiqueta10;
     static public JLabel etiqueta11;
     static public JLabel etiqueta12;
     static public JLabel etiqueta13;
-
     static public JLabel etiquetaa;
     static public JLabel etiquetab;
     static public JLabel etiquetac;
@@ -29,7 +54,6 @@ public class Panel_Uno extends JPanel {
     static public JLabel etiquetaj;
     static public JLabel etiquetak;
     static public JLabel etiquetal;
-
     static public JLabel etiquetare;
 
 
@@ -59,9 +83,6 @@ public class Panel_Uno extends JPanel {
             etiquetare.setBounds(55,50,900,900);
             this.add(etiquetare);
 
-
-
-
             button1 = new JButton("Cargar Archivo");
             button1.setBounds(100,235,150,20);
             this.add(button1);
@@ -74,10 +95,15 @@ public class Panel_Uno extends JPanel {
             button3.setBounds(100,450,150,20);
             this.add(button3);
 
+            button4 = new JButton("Limpiar buffer");
+            button4.setBounds(100,550,150,20);
+            this.add(button4);
+
             buttons12 = new ButtonGroup();
             buttons12.add(button1);
             buttons12.add(button2);
             buttons12.add(button3);
+            buttons12.add(button4);
 
             etiqueta10 = new JLabel("Grafica Vaccination Tweets");
             etiqueta10.setBounds(350,-20,800,100);
@@ -161,11 +187,6 @@ public class Panel_Uno extends JPanel {
             etiquetal.setBounds(350,640,600,100);
             etiquetal.setFont(fuenteLabels1);
             this.add(etiquetal);
-
-
-
-
-
 
             /*ActionListener escuchador = new ActionListener() {
                 @Override

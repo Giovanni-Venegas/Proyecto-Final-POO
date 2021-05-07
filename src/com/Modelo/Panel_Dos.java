@@ -1,7 +1,37 @@
+/**
+ * Proyecto Final de Programacion Orientada a Objetos
+ * Pfizer Vaccine Tweets
+ *
+ * @author: Giovanni Josue Venegas Ramirez (Data Science Specialization and Backend Developer)
+ * Package: Modelo
+ * File: Panel_Dos
+ * Date: 11/Mayo/2020
+ *
+ * Equipo 2:
+ * @ Giovanna Ruiz Fermoso  ------> Proyecto Escrito
+ * @ Abigail Uribe Gonzales ------> Proyecto Escrito
+ * @ Giovanni Josue Venegas Ramirez -----> Developer Principal
+ *
+ * IDE en uso: Intellij Idea
+ *
+ * Licencia Oracle: Java SE Runtime Environment 8u291
+ *
+ * Licencias de codigo abierto:
+ *  jFreechart-1.0.19
+ *  jCommon-1.0.23
+ *
+ *  S.O en donde se desarrollo: Windows 10 Version 20H2 2020
+ *
+ */
+
+
+
 package com.Modelo;
 
-import javax.swing.*;
+//Imports
 
+import javax.swing.*;
+import com.Controlador.ControladorPInterfaz;
 import com.Controlador.Regex;
 import com.Vista.Panel_Uno;
 import org.jfree.chart.ChartFactory;
@@ -11,11 +41,14 @@ import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
-
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.ApplicationFrame;
-
 import java.util.Scanner;
+
+/**
+ *  Extends ApplicationFrame
+ *  Una clase base para crear el marco principal para aplicaciones sencillas. El marco escucha los eventos de cierre de ventanas y responde cerrando la JVM.
+ */
 
 public class Panel_Dos extends ApplicationFrame {
 
@@ -26,26 +59,32 @@ public class Panel_Dos extends ApplicationFrame {
     static int numSi = 0;
     static int numNo = 0;
 
+    /**
+     *
+     * @param applicationTitle ----> Titulo de la grafica
+     * @param numSi
+     * @param numNo
+     *
+     * Función de Construccion
+     */
+
     public Panel_Dos(String applicationTitle, int numSi, int numNo) {
-
-
 
         super(applicationTitle);
         Panel_Dos.numSi = numSi;
         Panel_Dos.numNo = numNo;
 
-
         JPanel content = createDemoPanel();
-        content.setPreferredSize(new java.awt.Dimension(600,500));
+        content.setPreferredSize(new java.awt.Dimension(700,1000));
         getContentPane().add(content);
-
-
-
 
     }//constructor
 
 
-
+    /**
+     *
+     * @return Valores y datos de la grafica
+     */
     private static DefaultCategoryDataset createDataset() {
 
 
@@ -58,7 +97,10 @@ public class Panel_Dos extends ApplicationFrame {
         String[] texto; // Text file saved into an string
         String[][] keywords; // Words to read from file
         final String[][] keywordCount; // An array with the words and quantity of them
+
+
         pathTexto = "/Users/VENEGASRAMIREZGIOVAN/Desktop/vaccination_tweets.csv";
+
         texto = limpiador.leerTexto(pathTexto);
 
         pathPalabrasImportantes = "/Users/VENEGASRAMIREZGIOVAN/Desktop/palabras.txt";
@@ -121,19 +163,11 @@ public class Panel_Dos extends ApplicationFrame {
                     result.setValue(l, "L", "bad");
                     Panel_Uno.etiquetal.setText("Se encontro la palabra bad -> "+l+" veces");
 
-
-
-
-
                     //System.out.print(keywordCount[i][j] + " veces.\n");
                    // return result;
                 }
             } // for j
         } // for u
-
-
-
-
 
        /* DefaultCategoryDataset result = new DefaultCategoryDataset();
 
@@ -152,16 +186,17 @@ public class Panel_Dos extends ApplicationFrame {
 
         return result;
 
-
-
-
     }//DefaultCategoryDataSet
 
 
+    /**
+     *
+     * @return ChartPanel
+     *
+     * Funcion que crea la grafica
+     *
+     */
     public static JPanel createDemoPanel() {
-
-
-
 
             JFreeChart chart = ChartFactory.createBarChart3D("Vaccination Tweets", "Palabras en Tweets", "Frecuencia", createDataset(), PlotOrientation.VERTICAL, true, true, false);
             CategoryPlot plot = (CategoryPlot) chart.getPlot();
